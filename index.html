@@ -32,17 +32,16 @@
             if (username == null || username == '')
                 return setElementValue('logonMessage', 'Username is required');
 
-            //alert('Username : '+username+' - Password : '+password);
 
             //showWaitPage(1000);
             chilliController.logon( username , password ) ;
         }
 
         function updateUI (cmd) {
-            alert('You called the method' + cmd + '\n Your current state is =' + chilliController.clientState);
+            //alert('You called the method' + cmd + '\n Your current state is =' + chilliController.clientState);
             if (chilliController.clientState == 1) {
-                alert('Connected')
-                window.location = "http://www.google.fr";
+                //alert('Connected')
+                window.location = "http://www.pihomeserver.fr";
             }
         }
 
@@ -64,7 +63,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="javascript:void(0)">NetFATE Captive Portal</a>
+        <a class="navbar-brand" href="javascript:void(0)">KUPIKI Captive Portal</a>
     </div>
 </nav>
 
@@ -98,7 +97,6 @@
 <script src="js/material.min.js"></script>
 
 <script type="text/javascript">
-    console.log($.material)
     $.material.init(); // Init material design effect
 </script>
 </body>
