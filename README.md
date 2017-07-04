@@ -8,9 +8,6 @@ It's full part of the project [Kupiki-Hotspot-Script](https://github.com/pihomes
 The current template is based on the [codepen](https://codepen.io/suez/pen/dPqxoM) from @suez (Nikolay Talanov)
 
 Screenshots
-========
-
-Screenshots
 -----------
 
 <h4 align="center">Connexion screen</h4>
