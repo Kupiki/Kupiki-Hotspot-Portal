@@ -56,6 +56,34 @@ input, button {
     overflow: hidden;
 }
 
+/*
+ ******* spinner
+*/
+
+.spinner {
+    position: relative;
+    height: 100%;
+    background: -webkit-linear-gradient(top, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+    background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+    -webkit-transition: opacity 0.1s, -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+    transition: opacity 0.1s, -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+    transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+    transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25), -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    display: none;
+}
+.spinner.inactive {
+    opacity: 0;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+/*
+ ******* Login form
+*/
+
 .login {
     position: relative;
     height: 100%;
@@ -67,13 +95,12 @@ input, button {
     transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25), -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
     -webkit-transform: scale(1);
     transform: scale(1);
+    display: none;
 }
 .login.inactive {
-    opacity: 0;
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
-
 .login__form {
     position: absolute;
     top: 50%;
@@ -184,14 +211,17 @@ input, button {
     font-weight: bold;
 }
 
+/*
+ ******* Connected form
+*/
 
-.hotspot {
+
+.connected {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
     display: none;
     -webkit-transition: opacity 0.1s, -webkit-transform 0.3s cubic-bezier(0.68, -0.45, 0.465, 1.25);
     transition: opacity 0.1s, -webkit-transform 0.3s cubic-bezier(0.68, -0.45, 0.465, 1.25);
@@ -200,47 +230,47 @@ input, button {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
 }
-.hotspot.active {
+.connected.active {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
 }
-.hotspot.active .hotspot__user-photo {
+.connected.active .connected__user-photo {
     -webkit-transform: scale(1);
     transform: scale(1);
 }
-.hotspot.active .hotspot__meeting {
+.connected.active .connected__meeting {
     -webkit-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
 }
-.hotspot.active .hotspot__logout {
+.connected.active .connected__logout {
     -webkit-transform: scale(1);
     transform: scale(1);
 }
-.hotspot__top {
+.connected__top {
     position: relative;
     height: 28rem;
     background: rgba(0, 0, 0, 0.5);
     padding: 6rem 1.5rem 2rem;
     text-align: center;
 }
-.hotspot__bot {
+.connected__bot {
     position: relative;
     height: 25rem;
     background: #fff;
 }
 
-.hotspot__bot .hotspot__message .hotspot__message__p {
+.connected__bot .connected__message .connected__message__p {
     padding-top: 20px;
 }
 
-.hotspot__bot .hotspot__message {
+.connected__bot .connected__message {
     text-align:center;
     vertical-align: middle;
 }
 
-.hotspot__logout {
+.connected__logout {
     position: absolute;
     bottom: 3.3rem;
     right: 3.3rem;
@@ -260,17 +290,17 @@ input, button {
     -webkit-transform: scale(0);
     transform: scale(0);
 }
-.hotspot__logout.clicked {
+.connected__logout.clicked {
     bottom: 50%;
     right: 50%;
     -webkit-transform: scale(30) !important;
     transform: scale(30) !important;
     opacity: 0.9;
 }
-.hotspot__logout.clicked svg {
+.connected__logout.clicked svg {
     opacity: 0;
 }
-.hotspot__logout-icon {
+.connected__logout-icon {
     position: absolute;
     width: 3rem;
     height: 3rem;
@@ -281,7 +311,7 @@ input, button {
     -webkit-transition: opacity 0.1s;
     transition: opacity 0.1s;
 }
-.hotspot__logout-icon path {
+.connected__logout-icon path {
     stroke-width: 4px;
     stroke-dasharray: 64.36235046386719;
     stroke-dashoffset: 64.36235046386719;
