@@ -47,12 +47,15 @@ input, button {
 
 .demo {
     position: absolute;
-    top: 50%;
+    /*top: 50%;*/
     left: 50%;
-    margin-left: -15rem;
-    margin-top: -26.5rem;
-    width: 30rem;
-    height: 53rem;
+    margin-left: -20rem;
+    /*margin-left: 30%;*/
+    /*margin-top: -26.5rem;*/
+    width: 40rem;
+    /*width: 40%;*/
+    /*height: 53rem;*/
+    height: 100%;
     overflow: hidden;
 }
 
@@ -79,6 +82,37 @@ input, button {
     transform: scale(1.1);
 }
 
+/*
+ ******* error
+*/
+.errorPanel {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);*/
+  -webkit-transition: opacity 0.1s, -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+  transition: opacity 0.1s, -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+  transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+  transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25), -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  display: none;
+}
+.errorMessage {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+.errorMessage p {
+  color: #FDFCFD;
+  font-size: 15px;
+}
+.errorMessage h1 {
+  color: #FDFCFD;
+  font-size: 15px;
+  display: none;
+}
 
 /*
  ******* Login form
@@ -214,7 +248,6 @@ input, button {
 /*
  ******* Connected form
 */
-
 
 .connected {
     position: absolute;
@@ -370,4 +403,3 @@ input, button {
         stroke-dashoffset: 0;
     }
 }
-

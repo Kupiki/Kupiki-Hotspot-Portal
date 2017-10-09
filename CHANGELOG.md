@@ -1,3 +1,7 @@
+*** v0.4 ***
+- Use of a configuration file instead of hard coding in portal.js
+- Improve errors management and design
+
 *** v0.3 ***
 - Issue #5 : Change process to force a reload of the page once the user is connected
 - Small compression of the background image to improve load performances (650Ko instead of 1.1Mo)
