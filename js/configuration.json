@@ -1,0 +1,17 @@
+{
+  "options": {
+    "terms": {
+      "activated": false,
+      "value": "Please validate to confirm that you want to use that hotspot"
+    },
+    "userAuthentication": {
+      "activated": true,
+      "type": "user"
+    }
+  },
+  "chilliController": {
+    "host": "XXXXXX",
+    "port": "3990",
+    "interval": 60
+  }
+}
