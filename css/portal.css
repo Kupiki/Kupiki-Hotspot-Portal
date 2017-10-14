@@ -47,14 +47,9 @@ input, button {
 
 .demo {
     position: absolute;
-    /*top: 50%;*/
     left: 50%;
     margin-left: -20rem;
-    /*margin-left: 30%;*/
-    /*margin-top: -26.5rem;*/
     width: 40rem;
-    /*width: 40%;*/
-    /*height: 53rem;*/
     height: 100%;
     overflow: hidden;
 }
@@ -115,9 +110,16 @@ input, button {
 }
 
 /*
+ ******* error
+*/
+.terms {
+    display: none;
+    color: #FDFCFD;
+}
+
+/*
  ******* Login form
 */
-
 .login {
     position: relative;
     height: 100%;

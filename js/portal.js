@@ -57,6 +57,10 @@ function updateUI() {
     }
 }
 
+function displayTerms() {
+    alert(configuration.options.terms.terms)
+}
+
 $(document).ready(function() {
     $spinner = $(".spinner");
     $login = $(".login");
@@ -82,17 +86,33 @@ $(document).ready(function() {
       chilliController.onError = handleErrors;
       chilliController.onUpdate = updateUI;
 
+      if (configuration.options.terms && configuration.options.terms.active) {
+          $('.terms').show();
+          $('#terms_message').html(configuration.options.terms.message);
+          $('#terms_link').html(configuration.options.terms.link);
+      }
+
       $spinner.show();
 
       chilliController.refresh();
+      // updateUI();
     });
 
     $(document).on("click", ".login__submit", function(e) {
         if (animating) return;
 
-        var username =  document.getElementById('login__username').value ;
-        var password =  document.getElementById('login__password').value ;
+        var username    =  document.getElementById('login__username').value ;
+        var password    =  document.getElementById('login__password').value ;
+        var terms       =  document.getElementById('login__terms').checked ;
 
+        if (configuration.options.terms && configuration.options.terms.active && !$('#login__terms').is(":checked")) {
+            document.getElementById('login__errors').innerHTML = "<div class='login__row'>" +
+                "<p class='login__signup login__error'>" +
+                configuration.options.terms.error +
+                "</p>" +
+                "</div>";
+            return;
+        }
         if (username == null || username == '' || password == null || password == '') {
             document.getElementById('login__errors').innerHTML = "<div class='login__row'>" +
                 "<p class='login__signup login__error'>" +

@@ -43,7 +43,6 @@
           <div class="errorMessage">            
           </div>
         </div>
-
         <div class="login">
             <div class="login__top">
                 <img src="images/logo.png" style="width:50%; margin: 25%"/>
@@ -61,16 +60,15 @@
                     </svg>
                     <input type="password" id="login__password" class="login__input pass" placeholder="Password"/>
                 </div>
+                <div id="terms" class="terms">
+                    <input type="checkbox" id="login__terms"/>&nbsp;
+                    <span id="terms_message"></span>&nbsp;
+                    <span>(<a href="#" onclick="displayTerms()"><span id="terms_link"></span></a>)</span>
+                </div>
                 <div id="login__errors">
                     <div class='login__row'><p class='login__signup login__error'></p></div>
                 </div>
-                <div id="terms" class="terms">
-
-                </div>
                 <button type="button" class="login__submit">Sign in</button>
-                <!--
-                <p class="login__signup">Don't have an account? &nbsp;<a>Sign up</a></p>
-                -->
             </div>
         </div>
         <div class="connected">
