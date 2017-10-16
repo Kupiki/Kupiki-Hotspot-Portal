@@ -2,7 +2,7 @@
 
 var animating = false,
     firstCheck = true,
-    $spinner,$login,$terms,$connected,$login__submit,$errorPanel,
+    $spinner,$login,$terms,$connected,$login__submit,$errorPanel,$modal,
     configuration = {};
 
 function handleErrors (code) {
@@ -58,7 +58,14 @@ function updateUI() {
 }
 
 function displayTerms() {
-    alert(configuration.options.terms.terms)
+    var closeBtn = document.getElementById('closeTermsModal');
+    $modal.css('display', 'block');
+    var terms = document.getElementById('termsText');
+    terms.innerHTML = configuration.options.terms.terms;
+}
+
+function closeTermsModal() {
+    $modal.css('display', 'none');
 }
 
 $(document).ready(function() {
@@ -68,6 +75,7 @@ $(document).ready(function() {
     $terms = $(".terms");
     $connected = $(".connected");
     $login__submit = $(".login__submit");
+    $modal = $('#termsModal');
 
     animating   = false;
     firstCheck  = true;

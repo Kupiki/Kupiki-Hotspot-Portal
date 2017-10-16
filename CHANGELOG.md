@@ -1,3 +1,6 @@
+*** v0.5 ***
+- Replace alert by a modal. Alert is not well supported in a portal landing page
+
 *** v0.4 ***
 - Use of a configuration file instead of hard coding in portal.js
 - Improve errors management and design
