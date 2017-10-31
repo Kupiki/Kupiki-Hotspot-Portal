@@ -1,3 +1,6 @@
+*** v0.6 ***
+- Allow to use parameters to the page to fill username and password (Could be used via QR code)
+
 *** v0.5 ***
 - Replace alert by a modal. Alert is not well supported in a portal landing page
 
