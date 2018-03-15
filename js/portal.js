@@ -30,7 +30,7 @@ function addFormError(formRow, errorMsg) {
 // form_name - This attribute ties the form-handler function to the form you want to submit through ajax. Requires an ID (ex: #myfamousid)
 // custom_validation -
 
-function form_handler(form_name, custom_validation, success_message, error_message, success_function, error_function) {
+function formHandler(form_name, custom_validation, success_message, error_message, success_function, error_function) {
   $(form_name).find('input[type="submit"]').on('click', function(e) { // if submit button is clicked
     
     window.onbeforeunload = null; // cancels the alert message for unsaved changes (if such function exists)
@@ -55,7 +55,7 @@ function form_handler(form_name, custom_validation, success_message, error_messa
         $(form_name).find('.error-msg').remove();
       }, 300);
     } else {
-      return
+      return;
     }
   });
 }
@@ -64,18 +64,18 @@ function form_handler(form_name, custom_validation, success_message, error_messa
 function validate_login_form(form, data) {
   if (data.user_username === "") {
     // if username variable is empty
-    addFormError(form["user_username"], 'The username is missing');
+    addFormError(form['user_username'], 'The username is missing');
     return false; // stop the script if validation is triggered
   }
   
   if (data.user_password === "") {
     // if password variable is empty
-    addFormError(form["user_password"], 'The password is missing');
+    addFormError(form['user_password'], 'The password is missing');
     return false; // stop the script if validation is triggered
   }
   
   if (configuration.options.terms.active && !data.user_terms) {
-    addFormError(form["user_terms"], configuration.options.terms.error);
+    addFormError(form['user_terms'], configuration.options.terms.error);
     return false; // stop the script if validation is triggered
   }
   
@@ -83,7 +83,7 @@ function validate_login_form(form, data) {
   return true;
 }
 
-form_handler("#login_form", validate_login_form, null, null, null, null, null, null);
+formHandler('#login_form', validate_login_form, null, null, null, null, null, null);
 
 var dialogBox = $('#dialog');
 
@@ -98,8 +98,8 @@ $('#successful_login').on('click', 'a.dialog-reset', function() {
 });
 
 function handleErrors (code) {
-  $('.dialog-global-error').html("The last contact with the Controller (" + configuration.chilliController.host + ":" + configuration.chilliController.port + ") failed");
-  $('.dialog-global-error').append("<p>Error : " + code + "</p>");
+  $('.dialog-global-error').html('The last contact with the Controller (' + configuration.chilliController.host + ':' + configuration.chilliController.port + ') failed');
+  $('.dialog-global-error').append('<p>Error : ' + code + '</p>');
   $('#login_form').hide();
 }
 
@@ -112,7 +112,7 @@ function updateUI() {
     location.reload();
   } else if (chilliController.clientState === 0 && chilliController.command === 'logon') {
     // User not logged in with error message
-    $('.dialog-global-error').html("Username or password incorrect");
+    $('.dialog-global-error').html('Username or password incorrect');
   } else {
     // First time display, so display login form and change variable content
     firstDisplay = false;
@@ -120,7 +120,7 @@ function updateUI() {
 }
 
 $(document).ready(function() {
-  $.getJSON( "js/configuration.json", function( data ) {
+  $.getJSON('js/configuration.json', function( data ) {
     configuration = data;
   
     chilliController.host     = configuration.chilliController.host;
@@ -141,7 +141,7 @@ $(document).ready(function() {
   
     chilliController.refresh();
   }).fail(function( jqxhr, textStatus, error ) {
-    $('.dialog-global-error').html("Oops something went wrong with the configuration file");
+    $('.dialog-global-error').html('Oops something went wrong with the configuration file');
     $('#login_form').hide();
   }).done(function() {
   
