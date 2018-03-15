@@ -1,4 +1,8 @@
 *** v0.6 ***
+- Complete review of the code and the design
+- Default background lighter to improve display time
+
+*** v0.6 ***
 - Allow to use parameters to the page to fill username and password (Could be used via QR code)
 
 *** v0.5 ***

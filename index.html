@@ -4,98 +4,68 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 
-    <title>Captive Portal</title>
+    <title>Kupiki Hotspot - Captive Portal</title>
 
-    <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
     <link rel="stylesheet" type="text/css" href="css/portal.css">
-    <link rel="stylesheet" type="text/css" href="css/check.css">
-    <link rel="stylesheet" type="text/css" href="css/spinner.css">
-
 </head>
 <body>
 
-<div class="cont">
-    <div class="demo">
-        <div class="spinner">
-            <div class="spinner__top">
-                <img src="images/logo.png" style="width:50%; margin: 25%"/>
-            </div>
-            <div class="login__form">
-                <div class="sk-fading-circle">
-                    <div class="sk-circle1 sk-circle"></div>
-                    <div class="sk-circle2 sk-circle"></div>
-                    <div class="sk-circle3 sk-circle"></div>
-                    <div class="sk-circle4 sk-circle"></div>
-                    <div class="sk-circle5 sk-circle"></div>
-                    <div class="sk-circle6 sk-circle"></div>
-                    <div class="sk-circle7 sk-circle"></div>
-                    <div class="sk-circle8 sk-circle"></div>
-                    <div class="sk-circle9 sk-circle"></div>
-                    <div class="sk-circle10 sk-circle"></div>
-                    <div class="sk-circle11 sk-circle"></div>
-                    <div class="sk-circle12 sk-circle"></div>
-                </div>
-            </div>
+<div id="successful_login" class="dialog successful_login fix-middle">
+    <div class="container text-center dialog-content">
+        <div class="logo"></div>
+        <h1>Connected successfully !</h1>
+        <p>
+            You've successfully managed to log into the Wifi Hotspot.
+            <br> Go to http://logout to disconnect.
+        </p>
+    </div>
+</div>
+
+<div id="dialog" class="dialog dialog-effect-in">
+    <div class="dialog-front">
+        <div class="dialog-content">
+            <div class="logo"></div>
+            <div class="dialog-global-error"></div>
+
+            <form id="login_form" class="dialog-form" action="" method="POST">
+                <fieldset>
+                    <legend>Log in</legend>
+                    <div class="form-group">
+                        <label for="user_username" class="control-label">Username:</label>
+                        <input type="text" id="user_username" class="form-control" name="user_username" autofocus/>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_password" class="control-label">Password:</label>
+                        <input type="password" id="user_password" class="form-control" name="user_password"/>
+                    </div>
+                    <div class="form-group pad-top-20 form-group-checkbox terms">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="user_terms" name="user_terms">
+                                <span class="terms_message"></span>
+                                <span>(<a href="#" class="link user-actions"><span class="terms_link"></span></a>)</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="pad-top-20 pad-btm-20">
+                        <input type="submit" class="btn btn-default btn-block btn-lg" value="Continue">
+                    </div>
+                </fieldset>
+            </form>
         </div>
-        <div class="errorPanel">
-          <div class="errorMessage">
-          </div>
-        </div>
-        <div id="termsModal" class="modal">
-            <div class="modal-content">
-                <span id="closeTermsModal" class="close" onclick="closeTermsModal()">&times;</span>
-                <p id="termsText"></p>
-            </div>
-        </div>
-        <div class="login">
-            <div class="login__top">
-                <img src="images/logo.png" style="width:50%; margin: 25%"/>
-            </div>
-            <div class="login__form">
-                <div class="login__row">
-                    <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
-                        <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
-                    </svg>
-                    <input type="text" id="login__username" class="login__input name" placeholder="Username"/>
-                </div>
-                <div class="login__row">
-                    <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
-                        <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
-                    </svg>
-                    <input type="password" id="login__password" class="login__input pass" placeholder="Password"/>
-                </div>
-                <div id="terms" class="terms">
-                    <input type="checkbox" id="login__terms"/>&nbsp;
-                    <span id="terms_message"></span>&nbsp;
-                    <span>(<a href="#" onclick="displayTerms()"><span id="terms_link"></span></a>)</span>
-                </div>
-                <div id="login__errors">
-                    <div class='login__row'><p class='login__signup login__error'></p></div>
-                </div>
-                <button type="button" class="login__submit">Sign in</button>
-            </div>
-        </div>
-        <div class="connected">
-            <div class="connected__top">
-                <img src="images/logo.png" style="width:50%"/>
-            </div>
-            <div class="connected__bot">
-                <div class="connected__message">
-                    <p class="connected__message__p">
-                        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
-                    </p>
-                    <p class="connected__message__p" style="font-weight: bold; font-size: 1.5rem">
-                        Congratulations, you are now connected to the hotspot.
-                    </p>
-                </div>
+    </div>
+    <div class="dialog-back">
+        <div class="dialog-content">
+            <div class="logo"></div>
+            <div class="terms_content"></div>
+            <div class="text-center">
+                <p>Return to <a href="#" class="link user-actions"><strong>log in page</strong></a></p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- <script src="js/configuration.js"></script> -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/ChilliLibrary.js"></script>
