@@ -1,3 +1,8 @@
+*** v0.7 ***
+- Optimisation of the code
+- Rewrite of the terms popup
+- Add register capability with an option in the configuration file
+
 *** v0.6 ***
 - Complete review of the code and the design
 - Default background lighter to improve display time

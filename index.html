@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
@@ -8,69 +9,114 @@
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/portal.css">
+    <link rel="stylesheet" type="text/css" href="css/spinner.css">
 </head>
+
 <body>
-
-<div id="successful_login" class="dialog successful_login fix-middle">
-    <div class="container text-center dialog-content">
-        <div class="logo"></div>
-        <h1>Connected successfully !</h1>
-        <p>
-            You've successfully managed to log into the Wifi Hotspot.
-            <br> Go to http://logout to disconnect.
-        </p>
-    </div>
-</div>
-
-<div id="dialog" class="dialog dialog-effect-in">
-    <div class="dialog-front">
-        <div class="dialog-content">
+    <div id="successful_login" class="dialog fix-middle">
+        <div class="container text-center dialog-content">
             <div class="logo"></div>
-            <div class="dialog-global-error"></div>
-
-            <form id="login_form" class="dialog-form" action="" method="POST">
-                <fieldset>
-                    <legend>Log in</legend>
-                    <div class="form-group">
-                        <label for="user_username" class="control-label">Username:</label>
-                        <input type="text" id="user_username" class="form-control" name="user_username" autofocus/>
-                    </div>
-                    <div class="form-group">
-                        <label for="user_password" class="control-label">Password:</label>
-                        <input type="password" id="user_password" class="form-control" name="user_password"/>
-                    </div>
-                    <div class="form-group pad-top-20 form-group-checkbox terms">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" id="user_terms" name="user_terms">
-                                <span class="terms_message"></span>
-                                <span>(<a href="#" class="link user-actions"><span class="terms_link"></span></a>)</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="pad-top-20 pad-btm-20">
-                        <input type="submit" class="btn btn-default btn-block btn-lg" value="Continue">
-                    </div>
-                </fieldset>
-            </form>
+            <h1>Connected successfully !</h1>
+            <p>
+                You've successfully managed to log into the Wifi Hotspot.
+                <br> Go to http://logout to disconnect.
+            </p>
         </div>
     </div>
-    <div class="dialog-back">
+    <div id="terms" class="dialog fix-middle">
         <div class="dialog-content">
-            <div class="logo"></div>
             <div class="terms_content"></div>
             <div class="text-center">
-                <p>Return to <a href="#" class="link user-actions"><strong>log in page</strong></a></p>
+                <a href="#" class="link">Close</a>
             </div>
         </div>
     </div>
-</div>
+    <div id="spinner" class="dialog fix-middle">
+        <div class="dialog-content">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+    </div>
+    <div id="dialog" class="dialog dialog-effect-in">
+        <div class="dialog-front signup terms-parent">
+            <div class="dialog-content">
+                <div class="dialog-global-error"></div>
+                <div class="dialog-register-sucess"></div>
+                <form id="login_form" class="dialog-form" action="" method="POST">
+                    <fieldset>
+                        <legend>Log in</legend>
+                        <div class="form-group">
+                            <label for="user_username" class="control-label">Username:</label>
+                            <input type="text" id="user_username" class="form-control" name="user_username" autofocus />
+                        </div>
+                        <div class="form-group">
+                            <label for="user_password" class="control-label">Password:</label>
+                            <input type="password" id="user_password" class="form-control" name="user_password" />
+                        </div>
+                        <div class="form-group pad-top-20 form-group-checkbox terms">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" id="user_terms" name="user_terms">
+                                    <span class="terms_message"></span>
+                                    <span>(<a href="#" class="link terms-display"><span class="terms_link"></span></a>)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="pad-top-20 pad-btm-20">
+                            <input type="submit" class="btn btn-default btn-block btn-lg" value="Continue">
+                        </div>
+                        <div class="text-center register">
+                            <p>Do you wish to register<br> for <a href="#" class="link user-actions"><strong>a new
+                                        account</strong></a>?</p>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="dialog-back register">
+            <div class="dialog-content">
+                <div class="dialog-global-error"></div>
+                <form id="register_form" class="dialog-form" action="" method="POST">
+                    <fieldset>
+                        <legend>Register</legend>
+                        <div class="form-group">
+                            <label for="user_username" class="control-label">Username:</label>
+                            <input type="text" id="user_username" class="form-control" name="user_username" />
+                        </div>
+                        <div class="form-group">
+                            <label for="user_password" class="control-label">Password:</label>
+                            <input type="password" id="user_password" class="form-control" name="user_password" />
+                        </div>
+                        <div class="form-group">
+                            <label for="user_cnf_password" class="control-label">Confirm password:</label>
+                            <input type="password" id="user_cnf_password" class="form-control" name="user_cnf_password" />
+                        </div>
+                        <div class="form-group pad-top-20 form-group-checkbox terms">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" id="user_terms" name="user_terms">
+                                    <span class="terms_message"></span>
+                                    <span>(<a href="#" class="link terms-display"><span class="terms_link"></span></a>)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="pad-btm-20">
+                            <input type="submit" class="btn btn-default btn-block btn-lg" value="Continue" />
+                        </div>
+                        <div class="text-center">
+                            <p>Already have an account ?<br/>Return to <a href="#" class="link user-actions"><strong>log in page</strong></a></p>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/ChilliLibrary.js"></script>
-
-<script src="js/portal.js"></script>
-
+    <script src="js/jquery.min.js"></script>
+    <script src="js/ChilliLibrary.js"></script>
+    <script src="js/portal.js"></script>
 </body>
+
 </html>
