@@ -1,3 +1,6 @@
+*** v0.7.1 ***
+- Add support for SSL option in the Coova Controller. Not usable for now
+
 *** v0.7 ***
 - Optimisation of the code
 - Rewrite of the terms popup

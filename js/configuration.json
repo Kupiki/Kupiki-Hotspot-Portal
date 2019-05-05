@@ -20,6 +20,7 @@
   "chilliController": {
     "host": "XXXXXX",
     "port": "3990",
-    "interval": 60
+    "interval": 60,
+    "ssl": false
   }
 }

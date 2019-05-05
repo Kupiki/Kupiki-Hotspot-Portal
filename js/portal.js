@@ -204,6 +204,7 @@ $(document).ready(function () {
     chilliController.host = configuration.chilliController.host;
     chilliController.port = configuration.chilliController.port;
     chilliController.interval = configuration.chilliController.interval;
+    chilliController.ssl = configuration.chilliController.ssl;
 
     chilliController.onError = handleErrors;
     chilliController.onUpdate = updateUI;
