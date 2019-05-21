@@ -1,3 +1,5 @@
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FKupiki%2FKupiki-Hotspot-Portal.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FKupiki%2FKupiki-Hotspot-Portal?ref=badge_shield)
+
 What is Kupiki Hotspot Portal
 ==================
 
@@ -14,3 +16,7 @@ Screenshots
 <img src="http://www.pihomeserver.fr/hosting/portalConnect.png">
 <h4 align="center">Successful connexion</h4>
 <img src="http://www.pihomeserver.fr/hosting/portalConnected.png">
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FKupiki%2FKupiki-Hotspot-Portal.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FKupiki%2FKupiki-Hotspot-Portal?ref=badge_large)
